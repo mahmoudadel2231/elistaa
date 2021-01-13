@@ -1,24 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {WebView} from 'react-native-webview';
 
-const App = () => {
+export const App = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!loading) {
@@ -29,7 +15,6 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-
       <WebView
         onLoad={() => {
           setLoading(false);
@@ -42,5 +27,3 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({});
-
-export default App;
