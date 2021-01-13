@@ -7,27 +7,21 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-// import BarcodeScanner from 'react-native-barcodescanner';
 import {replace} from '../../navigation/NavigationService';
 import {RNCamera} from 'react-native-camera';
 
 export const BarcodeScannerScreen = () => {
-  const [torchMode] = useState('off');
-  const [cameraType] = useState('back');
   const onBarCodeRead = ({data}) => {
-    console.log('fefefe', data);
-    replace('barcodeWebView', data);
+    // console.log('fefefefefef', barcodes[0].data);
+    console.log('code', data);
+    replace('barcodeWebView', {barcode: data});
+
+    // replace('barcodeWebView', {barcode: barcodes[0].data});
   };
   let camera;
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      {/* <BarcodeScanner
-        onBarCodeRead={barcodeReceived}
-        style={{flex: 1}}
-        torchMode={torchMode}
-        cameraType={cameraType}
-      /> */}
       <View style={styles.container}>
         <RNCamera
           ref={(ref) => {

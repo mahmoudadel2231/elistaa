@@ -24,9 +24,9 @@ export const Home = () => {
         ref={(ref) => {
           webView = ref;
         }}
-        // onError={() => {
-        //   webView.reload();
-        // }}
+        onError={() => {
+          webView.reload();
+        }}
         source={{uri: 'https://ellistaa.com/en/home'}}
         style={{width: '100%', height: '100%', flex: 1}}
       />
