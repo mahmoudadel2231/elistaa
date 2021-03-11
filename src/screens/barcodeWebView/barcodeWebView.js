@@ -19,12 +19,25 @@ export const BarCodeWebViewScreen = ({route}) => {
       SplashScreen.hide();
     }
   }, [loading]);
-
+  let webView;
   return (
     <>
       <StatusBar barStyle="dark-content" />
-
-      <Text>{route.params.barcode}</Text>
+      <WebView
+        onLoad={() => {
+          setLoading(false);
+        }}
+        ref={(ref) => {
+          webView = ref;
+        }}
+        onError={() => {
+          webView.reload();
+        }}
+        source={{
+          uri: `https://ellistaa.com/en/search?type=products&search=${route.params.barcode}`,
+        }}
+        style={{width: '100%', height: '100%', flex: 1}}
+      />
     </>
   );
 };

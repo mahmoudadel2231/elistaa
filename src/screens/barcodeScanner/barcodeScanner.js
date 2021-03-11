@@ -43,20 +43,20 @@ export const BarcodeScannerScreen = () => {
             buttonNegative: 'Cancel',
           }}
           onBarCodeRead={onBarCodeRead}
-          barCodeTypes={[RNCamera.Constants.BarCodeType.upc_e]}
+          barCodeTypes={[RNCamera.Constants.BarCodeType.ean13]}
           // onGoogleVisionBarcodesDetected={({barcodes}) => {
           //   console.log('fefefefefef', barcodes[0].data);
           // }}
 
           // onGoogleVisionBarcodesDetected={onBarCodeRead}
         />
-        <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
+        {/* <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
           <TouchableOpacity
             // onPress={this.takePicture.bind(this)}
             style={styles.capture}>
             <Text style={{fontSize: 14}}> SNAP </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </>
   );
